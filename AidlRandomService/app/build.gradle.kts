@@ -6,6 +6,9 @@ android {
     namespace = "com.example.aidlrandomservice"
     compileSdk = 35
 
+
+
+
     defaultConfig {
         applicationId = "com.example.aidlrandomservice"
         minSdk = 24
@@ -14,6 +17,16 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        aidl = true
+    }
+
+    sourceSets {
+        getByName("main") {
+            aidl.setSrcDirs(listOf("src/main/aidl"))
+        }
     }
 
     buildTypes {
